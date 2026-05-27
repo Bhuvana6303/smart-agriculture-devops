@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: agriculture-ai
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: agriculture-ai
+
+  template:
+    metadata:
+      labels:
+        app: agriculture-ai
+
+    spec:
+      containers:
+      - name: agriculture-ai
+        image: bhu0/agriculture-ai
+        ports:
+        - containerPort: 5000

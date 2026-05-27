@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: agriculture-service
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: agriculture-ai
+
+  ports:
+    - port: 80
+      targetPort: 5000
